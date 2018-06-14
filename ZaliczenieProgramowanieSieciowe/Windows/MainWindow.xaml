@@ -1,0 +1,23 @@
+﻿<Window x:Class="ZaliczenieProgramowanieSieciowe.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZaliczenieProgramowanieSieciowe"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <ScrollViewer BorderThickness="5" BorderBrush="DarkGray" Height="351" Margin="10,10,137.6,0" VerticalAlignment="Top">
+            <TextBlock Name="ChatTextBlock" 
+                       ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                       ScrollViewer.VerticalScrollBarVisibility="Auto">
+                Trololololo
+            </TextBlock>
+        </ScrollViewer>
+
+
+        <TextBox Name="MessageBox" HorizontalAlignment="Left" Height="44" Margin="10,366,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="545"/>
+        <Button Content="Send" HorizontalAlignment="Left" Margin="559,366,0,0" VerticalAlignment="Top" Width="97" Height="44" Click="SendMessage"/>
+
+    </Grid>
+</Window>
