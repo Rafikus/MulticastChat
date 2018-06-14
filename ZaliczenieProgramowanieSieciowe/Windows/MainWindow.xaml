@@ -8,16 +8,16 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <ScrollViewer BorderThickness="5" BorderBrush="DarkGray" Height="351" Margin="10,10,137.6,0" VerticalAlignment="Top">
-            <TextBlock Name="ChatTextBlock" 
-                       ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                       ScrollViewer.VerticalScrollBarVisibility="Auto">
-                Trololololo
-            </TextBlock>
+            <TextBox Name="ChatTextBlock" 
+                     IsReadOnly="True"
+                     ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                     ScrollViewer.VerticalScrollBarVisibility="Auto"/>
         </ScrollViewer>
 
 
         <TextBox Name="MessageBox" HorizontalAlignment="Left" Height="44" Margin="10,366,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="545"/>
         <Button Content="Send" HorizontalAlignment="Left" Margin="559,366,0,0" VerticalAlignment="Top" Width="97" Height="44" Click="SendMessage"/>
+        <TreeView HorizontalAlignment="Left" Height="351" Margin="661,10,0,0" VerticalAlignment="Top" Width="123"/>
 
     </Grid>
 </Window>

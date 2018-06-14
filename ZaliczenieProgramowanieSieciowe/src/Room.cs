@@ -1,0 +1,6 @@
+﻿namespace ZaliczenieProgramowanieSieciowe
+{
+    class Room
+    {
+    }
+}

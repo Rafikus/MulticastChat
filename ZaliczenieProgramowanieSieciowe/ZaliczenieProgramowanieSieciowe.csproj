@@ -66,6 +66,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="src\Listener.cs" />
+    <Compile Include="src\Room.cs" />
+    <Compile Include="src\Sender.cs" />
+    <Compile Include="src\User.cs" />
     <Compile Include="Windows\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
