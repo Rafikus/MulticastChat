@@ -9,7 +9,7 @@
     <Grid>
         <ScrollViewer Name="ChatBoxScrollViewer" ScrollChanged="UpdateScrollViewer" BorderThickness="5" BorderBrush="DarkGray" Height="351" Margin="10,10,148,0" VerticalAlignment="Top" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
             <TextBox Name="ChatTextBox" 
-                     IsReadOnly="True" RenderTransformOrigin="0.5,0.5" Width="635">
+                     IsReadOnly="True" RenderTransformOrigin="0.5,0.5" Width="634">
             </TextBox>
         </ScrollViewer>
 
