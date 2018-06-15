@@ -11,5 +11,6 @@ namespace ZaliczenieProgramowanieSieciowe
         public static MessageParser Parser;
 
         public static TextBox ChatBox;
+        public static TreeViewItem RoomTreeView;
     }
 }

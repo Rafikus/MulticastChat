@@ -7,16 +7,17 @@
         mc:Ignorable="d"
         Title="Chat" Height="450" Width="800">
     <Grid>
-        <ScrollViewer Name="ChatBoxScrollViewer" ScrollChanged="UpdateScrollViewer" BorderThickness="5" BorderBrush="DarkGray" Height="351" Margin="10,10,137.6,0" VerticalAlignment="Top" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+        <ScrollViewer Name="ChatBoxScrollViewer" ScrollChanged="UpdateScrollViewer" BorderThickness="5" BorderBrush="DarkGray" Height="351" Margin="10,10,148,0" VerticalAlignment="Top" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
             <TextBox Name="ChatTextBox" 
-                     IsReadOnly="True"/>
+                     IsReadOnly="True" RenderTransformOrigin="0.5,0.5" Width="635">
+            </TextBox>
         </ScrollViewer>
 
 
-        <TextBox Name="MessageBox" HorizontalAlignment="Left" Height="44" Margin="10,366,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="545"/>
-        <Button Content="Send" HorizontalAlignment="Left" Margin="559,366,0,0" VerticalAlignment="Top" Width="97" Height="44" Click="SendMessage"/>
-        <TreeView HorizontalAlignment="Left" Height="351" Margin="661,10,0,0" VerticalAlignment="Top" Width="123"/>
-        <Button Content="Change Nick &#xD;&#xA;and Room&#xD;&#xA;"  HorizontalAlignment="Left" Margin="661,366,0,0" VerticalAlignment="Top" Width="121" Height="43" Click="Button_Click"/>
+        <TextBox Name="MessageBox" HorizontalAlignment="Left" Height="44" Margin="10,366,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="532" KeyDown="MessageBox_OnKeyDown"/>
+        <Button Content="Send" HorizontalAlignment="Left" Margin="547,366,0,0" VerticalAlignment="Top" Width="97" Height="44" Click="SendMessage"/>
+        <TreeView Name="RoomName" HorizontalAlignment="Left" Height="351" Margin="649,10,0,0" VerticalAlignment="Top" Width="135"/>
+            <Button Content="Change Nick and Room"  HorizontalAlignment="Left" Margin="649,366,0,0" VerticalAlignment="Top" Width="133" Height="44" Click="Button_Click"/>
 
     </Grid>
 </Window>

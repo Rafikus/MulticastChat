@@ -10,6 +10,7 @@ namespace ZaliczenieProgramowanieSieciowe
     {
         private readonly Dictionary<string, Func<string[], bool>> _parserFunctions;
         public delegate void UpdateTextCallback(string message);
+        private bool _debug = false;
 
         public MessageParser()
         {
@@ -107,7 +108,7 @@ namespace ZaliczenieProgramowanieSieciowe
         public void Parse(string message)
         {
             string[] splitMessage = message.Split(' ');
-            if(ChatManager.ChatBox != null)
+            if(ChatManager.ChatBox != null && _debug)
                 ChatManager.ChatBox.Dispatcher.Invoke(new UpdateTextCallback(UpdateText), $"DEBUG: {message}");
             _parserFunctions[splitMessage[0]].Invoke(splitMessage);
         }

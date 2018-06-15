@@ -1,6 +1,8 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace ZaliczenieProgramowanieSieciowe.Windows
 {
@@ -14,6 +16,9 @@ namespace ZaliczenieProgramowanieSieciowe.Windows
         {
             InitializeComponent();
             ChatManager.ChatBox = ChatTextBox;
+            ChatManager.RoomTreeView = new TreeViewItem(){Header = ChatManager.Room.Name};
+            RoomName.Items.Add(ChatManager.RoomTreeView);
+            ChatManager.RoomTreeView.Items.SortDescriptions.Add(new SortDescription("Header", ListSortDirection.Ascending));
             ChatManager.Sender.Send($"JOIN {ChatManager.Room.Name} {ChatManager.LocalUser.Username}");
             ChatManager.Sender.Send($"WHOIS {ChatManager.Room.Name}");
         }
@@ -42,6 +47,14 @@ namespace ZaliczenieProgramowanieSieciowe.Windows
         {
             ChatManager.Sender.Send($"LEFT {ChatManager.Room.Name} {ChatManager.LocalUser.Username}");
             base.OnClosed(e);
+        }
+
+        private void MessageBox_OnKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                Button_Click(sender, null);
+            }
         }
     }
 }

@@ -5,14 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ZaliczenieProgramowanieSieciowe"
         mc:Ignorable="d"
-        ResizeMode="NoResize"
-        Title="LoginWindow" Height="228.2" Width="144.8">
+        Title="LoginWindow" Height="225" Width="310">
     <Grid>
-        <Label Content="Enter username" Margin="3,10,0,0" HorizontalAlignment="Left" Width="114" Height="25" VerticalAlignment="Top"/>
-        <TextBox Margin="3,40,0,0" TextWrapping="Wrap" Name="UsernameTextBox" HorizontalAlignment="Left" Width="114" Height="21" VerticalAlignment="Top"/>
-        <Label Content="Enter room name" HorizontalAlignment="Left" Margin="3,97,0,0" VerticalAlignment="Top" Height="26" Width="102"/>
-        <Label Content="" FontStyle="Italic" FontSize="10" Name="NameErrorLabel" HorizontalAlignment="Left" Margin="3,66,0,0" VerticalAlignment="Top" Height="26" Width="126"/>
-        <TextBox Margin="3,128,0,0" TextWrapping="Wrap" Name="RoomTextBox" HorizontalAlignment="Left" Width="114" Height="21" VerticalAlignment="Top"/>
-        <Button Content="OK" Margin="3,154,0,0" Click="Button_Click" HorizontalAlignment="Left" Width="114" Height="25" VerticalAlignment="Top"/>
+        <Label Content="Enter username" Margin="90,10,0,0" HorizontalAlignment="Left" Width="114" Height="25" VerticalAlignment="Top" RenderTransformOrigin="0.661,0.56"/>
+        <TextBox Margin="74,40,0,0" TextWrapping="Wrap" Name="UsernameTextBox" HorizontalAlignment="Left" Width="145" Height="21" VerticalAlignment="Top"/>
+        <Label Content="Enter room name" HorizontalAlignment="Left" Margin="90,100,0,0" VerticalAlignment="Top" Height="26" Width="114"/>
+        <Label Content="" FontStyle="Italic" FontSize="10" Name="NameErrorLabel" HorizontalAlignment="Left" Margin="74,71,0,0" VerticalAlignment="Top" Height="26" Width="145"/>
+        <TextBox Margin="74,131,0,0" TextWrapping="Wrap" Name="RoomTextBox" HorizontalAlignment="Left" Width="145" Height="21" VerticalAlignment="Top"/>
+        <Button Content="OK" Margin="90,157,0,0" Click="Button_Click" HorizontalAlignment="Left" Width="114" Height="27" VerticalAlignment="Top"/>
     </Grid>
 </Window>
