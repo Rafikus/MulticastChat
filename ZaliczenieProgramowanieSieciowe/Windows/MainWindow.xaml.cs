@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace ZaliczenieProgramowanieSieciowe.Windows
 {
@@ -23,6 +24,18 @@ namespace ZaliczenieProgramowanieSieciowe.Windows
         {
             ChatManager.Sender.Send($"MSG {ChatManager.LocalUser.Username} ROOM {MessageBox.Text}");
             MessageBox.Clear();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var newWindow = new LoginWindow();
+            newWindow.Show();
+            this.Close();
+        }
+
+        private void UpdateScrollViewer(object sender, ScrollChangedEventArgs e)
+        {
+            ChatBoxScrollViewer.ScrollToEnd();
         }
     }
 }

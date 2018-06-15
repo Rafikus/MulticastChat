@@ -8,9 +8,10 @@ namespace ZaliczenieProgramowanieSieciowe
 {
     class Sender
     {
+        private Thread _thread;
         public void Send(string message)
         {
-            var thread = new Thread(() =>
+            _thread = new Thread(() =>
             {
                 UdpClient udpclient = new UdpClient();
 
@@ -20,9 +21,9 @@ namespace ZaliczenieProgramowanieSieciowe
 
                 var buffer = Encoding.Unicode.GetBytes(message);
                 udpclient.Send(buffer, buffer.Length, remoteep);
-
             });
-            thread.Start();
+            _thread.IsBackground = true;
+            _thread.Start();
         }
     }
 }

@@ -8,14 +8,15 @@ namespace ZaliczenieProgramowanieSieciowe
 {
     class Listener
     {
+        private Thread _thread;
         public void StartListening()
         {
-            var thread = new Thread(() =>
+            _thread = new Thread(() =>
             {
                 UdpClient client = new UdpClient { ExclusiveAddressUse = false };
 
                 IPEndPoint localEp = new IPEndPoint(IPAddress.Any, 2222);
-
+                
                 client.Client.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
                 client.ExclusiveAddressUse = false;
 
@@ -31,7 +32,9 @@ namespace ZaliczenieProgramowanieSieciowe
                     ChatManager.Parser.Parse(strData);
                 }
             });
-            thread.Start();
+            _thread.IsBackground = true;
+            _thread.Start();
         }
+       
     }
 }

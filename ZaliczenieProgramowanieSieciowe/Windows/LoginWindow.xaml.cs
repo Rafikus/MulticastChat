@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Input;
 
 namespace ZaliczenieProgramowanieSieciowe.Windows
@@ -19,9 +20,16 @@ namespace ZaliczenieProgramowanieSieciowe.Windows
         
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var mainWindow = new MainWindow(new User(UsernameTextBox.Text));
-            mainWindow.Show();
-            this.Close();
+            if (LoginManager.VerifyUsername(UsernameTextBox.Text))
+            {
+                var mainWindow = new MainWindow(new User(UsernameTextBox.Text));
+                mainWindow.Show();
+                this.Close();
+            }
+            else
+            {
+                NameErrorLabel.Content = "Username already exist.";
+            }
         }
     }
 }
