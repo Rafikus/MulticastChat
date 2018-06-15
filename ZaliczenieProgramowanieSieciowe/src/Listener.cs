@@ -35,6 +35,11 @@ namespace ZaliczenieProgramowanieSieciowe
             _thread.IsBackground = true;
             _thread.Start();
         }
+
+        public void Abort()
+        {
+            _thread.Abort();
+        }
        
     }
 }

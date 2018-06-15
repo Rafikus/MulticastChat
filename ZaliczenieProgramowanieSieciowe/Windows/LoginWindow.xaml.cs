@@ -22,7 +22,9 @@ namespace ZaliczenieProgramowanieSieciowe.Windows
         {
             if (LoginManager.VerifyUsername(UsernameTextBox.Text))
             {
-                var mainWindow = new MainWindow(new User(UsernameTextBox.Text));
+                ChatManager.LocalUser = new User(UsernameTextBox.Text);
+                ChatManager.Room = new Room(RoomTextBox.Text);
+                var mainWindow = new MainWindow();
                 mainWindow.Show();
                 this.Close();
             }
