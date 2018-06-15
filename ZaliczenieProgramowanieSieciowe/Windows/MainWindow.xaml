@@ -14,10 +14,10 @@
         </ScrollViewer>
 
 
-        <TextBox Name="MessageBox" HorizontalAlignment="Left" Height="44" Margin="10,366,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="532" KeyDown="MessageBox_OnKeyDown"/>
+        <TextBox Name="MessageBox" HorizontalAlignment="Left" Height="44" Margin="10,366,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="532" KeyDown="SendMessageWithEnter"/>
         <Button Content="Send" HorizontalAlignment="Left" Margin="547,366,0,0" VerticalAlignment="Top" Width="97" Height="44" Click="SendMessage"/>
         <TreeView Name="RoomName" HorizontalAlignment="Left" Height="351" Margin="649,10,0,0" VerticalAlignment="Top" Width="135"/>
-            <Button Content="Change Nick and Room"  HorizontalAlignment="Left" Margin="649,366,0,0" VerticalAlignment="Top" Width="133" Height="44" Click="Button_Click"/>
+            <Button Content="Change Nick and Room"  HorizontalAlignment="Left" Margin="649,366,0,0" VerticalAlignment="Top" Width="133" Height="44" Click="BackToLogin"/>
 
     </Grid>
 </Window>

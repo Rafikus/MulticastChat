@@ -15,10 +15,12 @@ namespace ZaliczenieProgramowanieSieciowe.Windows
         public MainWindow()
         {
             InitializeComponent();
+
             ChatManager.ChatBox = ChatTextBox;
             ChatManager.RoomTreeView = new TreeViewItem(){Header = ChatManager.Room.Name};
             RoomName.Items.Add(ChatManager.RoomTreeView);
             ChatManager.RoomTreeView.Items.SortDescriptions.Add(new SortDescription("Header", ListSortDirection.Ascending));
+
             ChatManager.Sender.Send($"JOIN {ChatManager.Room.Name} {ChatManager.LocalUser.Username}");
             ChatManager.Sender.Send($"WHOIS {ChatManager.Room.Name}");
         }
@@ -29,13 +31,21 @@ namespace ZaliczenieProgramowanieSieciowe.Windows
             MessageBox.Clear();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void BackToLogin(object sender, RoutedEventArgs e)
         {
             var newWindow = new LoginWindow();
             newWindow.Show();
             ChatManager.Sender.Abort();
             ChatManager.Listener.Abort();
             this.Close();
+        }
+
+        private void SendMessageWithEnter(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                SendMessage(sender, null);
+            }
         }
 
         private void UpdateScrollViewer(object sender, ScrollChangedEventArgs e)
@@ -49,12 +59,5 @@ namespace ZaliczenieProgramowanieSieciowe.Windows
             base.OnClosed(e);
         }
 
-        private void MessageBox_OnKeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Enter)
-            {
-                SendMessage(sender, null);
-            }
-        }
     }
 }

@@ -1,6 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-using System.Security.RightsManagement;
-using System.Threading;
+﻿using System.Threading;
 
 namespace ZaliczenieProgramowanieSieciowe
 {
