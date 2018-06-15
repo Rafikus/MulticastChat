@@ -11,17 +11,15 @@ namespace ZaliczenieProgramowanieSieciowe.Windows
         public LoginWindow()
         {
             InitializeComponent();
+            ChatManager.Sender = new Sender();
+            ChatManager.Listener = new Listener();
+            ChatManager.Listener.StartListening();
+            ChatManager.Parser = new MessageParser();
         }
-
-        private void UIElement_OnKeyDown(object sender, KeyEventArgs e)
-        {
-            UsernameTextBox.Text = e.ToString();
-            Button_Click(sender, null);
-        }
-
+        
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var mainWindow = new MainWindow("Kek");
+            var mainWindow = new MainWindow(new User(UsernameTextBox.Text));
             mainWindow.Show();
             this.Close();
         }

@@ -5,13 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ZaliczenieProgramowanieSieciowe"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Chat" Height="450" Width="800">
     <Grid>
-        <ScrollViewer BorderThickness="5" BorderBrush="DarkGray" Height="351" Margin="10,10,137.6,0" VerticalAlignment="Top">
-            <TextBox Name="ChatTextBlock" 
-                     IsReadOnly="True"
-                     ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                     ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+        <ScrollViewer BorderThickness="5" BorderBrush="DarkGray" Height="351" Margin="10,10,137.6,0" VerticalAlignment="Top" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+            <TextBox Name="ChatTextBox" 
+                     IsReadOnly="True"/>
         </ScrollViewer>
 
 

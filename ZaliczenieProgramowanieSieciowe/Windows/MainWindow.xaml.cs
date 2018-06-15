@@ -12,14 +12,17 @@ namespace ZaliczenieProgramowanieSieciowe.Windows
             InitializeComponent();
         }
 
-        public MainWindow(string username)
+        public MainWindow(User user)
         {
             InitializeComponent();
+            ChatManager.ChatBox = ChatTextBox;
+            ChatManager.LocalUser = user;
         }
 
         private void SendMessage(object sender, RoutedEventArgs e)
         {
-
+            ChatManager.Sender.Send($"MSG {ChatManager.LocalUser.Username} ROOM {MessageBox.Text}");
+            MessageBox.Clear();
         }
     }
 }
