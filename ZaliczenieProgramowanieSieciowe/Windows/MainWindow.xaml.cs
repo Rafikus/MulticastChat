@@ -53,7 +53,7 @@ namespace ZaliczenieProgramowanieSieciowe.Windows
         {
             if (e.Key == Key.Enter)
             {
-                Button_Click(sender, null);
+                SendMessage(sender, null);
             }
         }
     }
